@@ -7,9 +7,10 @@ Name:		rdate
 %define		versionmajor 0
 %define		versionminor 990821
 Version:	%{versionmajor}.%{versionminor}
-Release:	1
+Release:	2
 Copyright:	none
 Group:		Networking/Utilities
+Group(de):	Netzwerkwesen/Werkzeuge
 Group(pl):	Sieciowe/Narzêdzia
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -50,16 +51,14 @@ da mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %build
 %{__make} clean
-%{__make} CFLAGS="-DINET6 $RPM_OPT_FLAGS" LDFLAGS="-s"
+%{__make} CFLAGS="-DINET6 $RPM_OPT_FLAGS" 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
+install rdate $RPM_BUILD_ROOT%{_bindir}
+install rdate.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
