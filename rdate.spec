@@ -15,6 +15,7 @@ Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-segfault.patch
+Requires(post,postun):	/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
