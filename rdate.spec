@@ -1,18 +1,18 @@
 Summary:     Remote clock reader (and local setter)
+Summary(fr): Lecteur d'horloge distante (et configurateur local)
+Summary(de): Entfernter Uhrenleser (lokaler Einsteller)
+Summary(pl): Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
+Summary(tr): Að üzerinden sistem saatini ayarlayan yazýlým
 Name:        rdate
 %define      versionmajor 0
 %define      versionminor 960923
 Version:     %{versionmajor}.%{versionminor}
-Release:     6
+Release:     7
 Copyright:   none
 Group:       Networking/Utilities
 Group(pl):   Sieciowe/Narzêdzia
 Source:      ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
-Buildroot:   /tmp/buildroot-%{name}-%{release}
-Summary(de): Entfernter Uhrenleser (lokaler Einsteller)
-Summary(fr): Lecteur d'horloge distante (et configurateur local)
-Summary(pl): Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
-Summary(tr): Að üzerinden sistem saatini ayarlayan yazýlým
+Buildroot:   /tmp/%{name}-%{release}-root
 
 %description
 rdate is a program that can retrieve the time from another machine on your
@@ -33,10 +33,10 @@ machine que vous avez interrogé. Il n'est pas très précis ; si vous vous
 souciez des millisecondes, récupérez xntpd.
 
 %description -l pl
-rdate jest programem który odczytujê datê i godzinê z innej maszyny w sieci.
+rdate jest programem który odczytuje datê i godzinê z innej maszyny w sieci.
 Je¿eli jest uruchamiany jako root mo¿e tak¿e s³u¿yæ do synchronizacji
-lokalnego wzglêdem innego komputera w sieci. Nie jest zbyt dok³adny i je¿eli
-milisekundy maj± dla ciebie znaczenie u¿yj xntpd.
+lokalnego czasu wzglêdem innego komputera w sieci. Nie jest zbyt dok³adny
+i je¿eli milisekundy maj± dla znaczenie nale¿y u¿yæ xntpd.
 
 %description -l tr
 rdate ile herhangi baþka bir makinadan sistem saatini sorgulanabilir.
@@ -48,7 +48,7 @@ mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %build
 make clean
-make CFLAGS="$RPM_OPT_FLAGS"
+make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -57,14 +57,23 @@ install -d $RPM_BUILD_ROOT/usr/{bin,man/man1}
 install -s rdate $RPM_BUILD_ROOT/usr/bin
 install rdate.1 $RPM_BUILD_ROOT/usr/man/man1
 
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %attr(755, root, root) /usr/bin/rdate
-%attr(644, root,  man) /usr/man/man1/rdate.1
+%attr(644, root,  man) /usr/man/man1/*
 
 %changelog
+* Wed Feb 17 1999 Micha³ Kuratczyk <kura@wroclaw.art.pl>
+  [0.960923-7]
+- added gzipping man page
+- added LDFLAGS=-s
+- sloted BuildRoot into PLD standard
+- cosmetic changes
+
 * Thu Oct 13 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.960923-6]
 - removed patching Makefile (now $RPM_OPT_FLAGS in CFLAGS is passed directly
