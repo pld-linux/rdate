@@ -89,7 +89,7 @@ case "$1" in
 			run_cmd "$(nls "Setting time from remote server (bg): %s" "${RDATE_SERVERS}")" /bin/true
 			run_cmd "Syncing hardware clock (bg)" /bin/true
 			{
-				rdate -s -l "${RDATE_SERVERS}"
+				rdate -s -l "${RDATE_SERVERS}" > /dev/null 2>&1
 				set_time
 			}&
 		else
