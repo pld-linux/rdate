@@ -12,9 +12,9 @@ if [ -f /etc/sysconfig/rdate ]; then
 fi
 
 # Check that networking is up.
-if [ is_yes "${NETWORKING}" -a is_yes "${SET_TIME}" -a -n "${RDATE_SERVERS}" ]; then
+if is_yes "${NETWORKING}" && is_yes "${SET_TIME}" && [ -n "${RDATE_SERVERS}" ]; then
 	/usr/bin/rdate -s "${RDATE_SERVERS}"
-	if [ $? -eq 0 -a is_yes "${SYNC_HWCLOCK}" -a -x /sbin/hwclock ]; then
+	if [ $? -eq 0 -a -x /sbin/hwclock ] && is_yes "${SYNC_HWCLOCK}"; then
 		# Set the system clock.
 		ARC=0
 		SRM=0
