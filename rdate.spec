@@ -108,6 +108,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/rdate
-%attr(754,root,root) %{_sysconfdir}/rc.d/init.d/%{name}
+%attr(755,root,root) %{_sysconfdir}/rc.d/init.d/%{name}
 %attr(644,root,root) %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 %{_mandir}/man1/*
