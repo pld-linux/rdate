@@ -16,6 +16,7 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Source3:	%{name}.cron
 Patch0:		%{name}-segfault.patch
+Patch1:		%{name}-ipv6.patch
 Requires(post,postun):	/sbin/chkconfig
 Obsoletes:	rdate-bsd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -82,6 +83,7 @@ da mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} clean
@@ -104,7 +106,7 @@ install %{SOURCE3} $RPM_BUILD_ROOT/etc/cron.daily/%{name}
 if [ "$1" = "0" ]; then
 	/sbin/chkconfig --del rdate
 fi
-	
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
