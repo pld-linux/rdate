@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %attr(755, root, root) /usr/bin/rdate
-%attr(644, root,  man) %{_mandir}/man1/*
+%{_mandir}/man1/*
 
 %changelog
 * Wed Feb 17 1999 Micha³ Kuratczyk <kura@wroclaw.art.pl>
