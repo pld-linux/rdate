@@ -19,8 +19,8 @@ Source3:	%{name}.cron
 Patch0:		%{name}-segfault.patch
 Patch1:		%{name}-ipv6.patch
 Requires(post,postun):	/sbin/chkconfig
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	rdate-bsd
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 rdate is a program that can retrieve the time from another machine on
