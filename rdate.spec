@@ -11,37 +11,39 @@ Release:	1
 Copyright:	none
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
-Source:		ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
+Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-rdate is a program that can retrieve the time from another machine on your
-network.  If run as root, it will also set your local time to that of the
-machine you queried.  It is not super accurate; get xntpd if you are really
-worried about milliseconds.
+rdate is a program that can retrieve the time from another machine on
+your network. If run as root, it will also set your local time to that
+of the machine you queried. It is not super accurate; get xntpd if you
+are really worried about milliseconds.
 
 %description -l de
-rdate ist ein Programm, das die Uhrzeit von einem anderen Netzwerkrechner
-lesen kann. Wenn Sie es als root ausführen, stellt es Ihre Ortszeit auf die
-des abgefragten Rechners ein. Es ist nicht sehr genau. Wenn Sie auf die
-Millisekunde genau sein wollen, besorgen Sie sich xntpd .
+rdate ist ein Programm, das die Uhrzeit von einem anderen
+Netzwerkrechner lesen kann. Wenn Sie es als root ausführen, stellt es
+Ihre Ortszeit auf die des abgefragten Rechners ein. Es ist nicht sehr
+genau. Wenn Sie auf die Millisekunde genau sein wollen, besorgen Sie
+sich xntpd .
 
 %description -l fr
-rdate permet de récupérer l'heure d'une autre machine du réseau. s'il est
-lancé par root, il configurera aussi votre heure locale avec celle de la
-machine que vous avez interrogé. Il n'est pas très précis ; si vous vous
-souciez des millisecondes, récupérez xntpd.
+rdate permet de récupérer l'heure d'une autre machine du réseau. s'il
+est lancé par root, il configurera aussi votre heure locale avec celle
+de la machine que vous avez interrogé. Il n'est pas très précis ; si
+vous vous souciez des millisecondes, récupérez xntpd.
 
 %description -l pl
-rdate jest programem który odczytuje datê i godzinê z innej maszyny w sieci.
-Je¿eli jest uruchamiany jako root mo¿e tak¿e s³u¿yæ do synchronizacji
-lokalnego czasu wzglêdem innego komputera w sieci. Nie jest zbyt dok³adny
-i je¿eli milisekundy maj± dla znaczenie nale¿y u¿yæ xntpd.
+rdate jest programem który odczytuje datê i godzinê z innej maszyny w
+sieci. Je¿eli jest uruchamiany jako root mo¿e tak¿e s³u¿yæ do
+synchronizacji lokalnego czasu wzglêdem innego komputera w sieci. Nie
+jest zbyt dok³adny i je¿eli milisekundy maj± dla znaczenie nale¿y u¿yæ
+xntpd.
 
 %description -l tr
 rdate ile herhangi baþka bir makinadan sistem saatini sorgulanabilir.
-Yetkili kullanýcý tarafýndan çalýþtýrýlýrsa sistem saatini ayarlamak da
-mümkündür. Ne var ki bu uygulama çok hassas deðildir.
+Yetkili kullanýcý tarafýndan çalýþtýrýlýrsa sistem saatini ayarlamak
+da mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %prep
 %setup -q -n %{name}
