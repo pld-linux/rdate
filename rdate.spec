@@ -54,7 +54,7 @@ make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/{bin,man/man1}
 
-install -s rdate $RPM_BUILD_ROOT/usr/bin
+install -s rdate $RPM_BUILD_ROOT%{_bindir}
 install rdate.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
@@ -63,7 +63,7 @@ gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%attr(755, root, root) /usr/bin/rdate
+%attr(755, root, root) %{_bindir}/rdate
 %{_mandir}/man1/*
 
 %changelog
