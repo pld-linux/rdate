@@ -5,7 +5,7 @@ Summary(pl):	Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
 Summary(tr):	Að üzerinden sistem saatini ayarlayan yazýlým
 Name:		rdate
 %define		versionmajor 0
-%define		versionminor 990504
+%define		versionminor 990821
 Version:	%{versionmajor}.%{versionminor}
 Release:	1
 Copyright:	none
@@ -46,18 +46,19 @@ Yetkili kullanýcý tarafýndan çalýþtýrýlýrsa sistem saatini ayarlamak
 da mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{versionminor}
 
 %build
 %{__make} clean
-%{__make} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s"
+%{__make} CFLAGS="-DINET6 $RPM_OPT_FLAGS" LDFLAGS="-s"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install -s rdate $RPM_BUILD_ROOT%{_bindir}
-install rdate.1 $RPM_BUILD_ROOT%{_mandir}/man1
+make \
+	DESTDIR=$RPM_BUILD_ROOT \
+	install
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
