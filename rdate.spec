@@ -55,16 +55,16 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/{bin,man/man1}
 
 install -s rdate $RPM_BUILD_ROOT/usr/bin
-install rdate.1 $RPM_BUILD_ROOT/usr/man/man1
+install rdate.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %attr(755, root, root) /usr/bin/rdate
-%attr(644, root,  man) /usr/man/man1/*
+%attr(644, root,  man) %{_mandir}/man1/*
 
 %changelog
 * Wed Feb 17 1999 Micha³ Kuratczyk <kura@wroclaw.art.pl>
