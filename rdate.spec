@@ -8,10 +8,12 @@ Summary(ru):	Программа для чтения удаленных часов и установки по ним местных
 Summary(tr):	AП Эzerinden sistem saatini ayarlayan yazЩlЩm
 Name:		rdate
 Version:	1.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
+Source1:	%{name}.init
+Source2:	%{name}.sysconfig
 Patch0:		%{name}-segfault.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -84,10 +86,12 @@ da mЭmkЭndЭr. Ne var ki bu uygulama Гok hassas deПildir.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}/{rc.d/init.d,sysconfig}}
 
 install rdate $RPM_BUILD_ROOT%{_bindir}
 install rdate.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/%{name}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -95,4 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/rdate
+%attr(755,root,root) %{_sysconfdir}/rc.d/init.d/%{name}
+%attr(644,root,root) %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 %{_mandir}/man1/*
