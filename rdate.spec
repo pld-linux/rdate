@@ -17,7 +17,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 rdate is a program that can retrieve the time from another machine on
 your network. If run as root, it will also set your local time to that
-of the machine you queried. It is not super accurate; get xntpd if you
+of the machine you queried. It is not super accurate; get ntpd if you
 are really worried about milliseconds.
 
 %description -l de
@@ -25,20 +25,20 @@ rdate ist ein Programm, das die Uhrzeit von einem anderen
 Netzwerkrechner lesen kann. Wenn Sie es als root ausführen, stellt es
 Ihre Ortszeit auf die des abgefragten Rechners ein. Es ist nicht sehr
 genau. Wenn Sie auf die Millisekunde genau sein wollen, besorgen Sie
-sich xntpd .
+sich ntpd.
 
 %description -l fr
 rdate permet de récupérer l'heure d'une autre machine du réseau. s'il
 est lancé par root, il configurera aussi votre heure locale avec celle
 de la machine que vous avez interrogé. Il n'est pas très précis ; si
-vous vous souciez des millisecondes, récupérez xntpd.
+vous vous souciez des millisecondes, récupérez ntpd.
 
 %description -l pl
 rdate jest programem który odczytuje datê i godzinê z innej maszyny w
 sieci. Je¿eli jest uruchamiany jako root mo¿e tak¿e s³u¿yæ do
 synchronizacji lokalnego czasu wzglêdem innego komputera w sieci. Nie
 jest zbyt dok³adny i je¿eli milisekundy maj± dla znaczenie nale¿y u¿yæ
-xntpd.
+ntpd.
 
 %description -l tr
 rdate ile herhangi baþka bir makinadan sistem saatini sorgulanabilir.
