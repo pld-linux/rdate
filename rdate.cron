@@ -13,7 +13,7 @@ fi
 
 # Check that networking is up.
 if is_yes "${NETWORKING}" && is_yes "${SET_TIME}" && [ -n "${RDATE_SERVERS}" ]; then
-	/usr/bin/rdate -s "${RDATE_SERVERS}"
+	/usr/bin/rdate -s ${RDATE_SERVERS}
 	if [ $? -eq 0 -a -x /sbin/hwclock ] && is_yes "${SYNC_HWCLOCK}"; then
 		# Set the system clock.
 		ARC=0
