@@ -18,11 +18,16 @@ if is_no "${NETWORKING}"; then
 	exit 1
 fi
 
+SET_TIME=no
+
+# Get service config
+if [ -f /etc/sysconfig/rdate ] ; then
+	. /etc/sysconfig/rdate
+fi
+
 # See how we were called.
 case "$1" in
   start|restart)
-  	. /etc/sysconfig/rdate
-
 	# Check if we have to do anything:
 	if [ "$SET_TIME" = "yes" ]; then
 		if [ -n "$RDATE_SERVER" ]; then
