@@ -12,7 +12,7 @@ Copyright:   none
 Group:       Networking/Utilities
 Group(pl):   Sieciowe/Narzêdzia
 Source:      ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
-Buildroot:   /tmp/%{name}-%{release}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 rdate is a program that can retrieve the time from another machine on your
