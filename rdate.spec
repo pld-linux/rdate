@@ -1,17 +1,17 @@
-Summary:     Remote clock reader (and local setter)
-Summary(fr): Lecteur d'horloge distante (et configurateur local)
-Summary(de): Entfernter Uhrenleser (lokaler Einsteller)
-Summary(pl): Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
-Summary(tr): Að üzerinden sistem saatini ayarlayan yazýlým
-Name:        rdate
-%define      versionmajor 0
-%define      versionminor 990504
-Version:     %{versionmajor}.%{versionminor}
-Release:     1
-Copyright:   none
-Group:       Networking/Utilities
-Group(pl):   Sieciowe/Narzêdzia
-Source:      ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
+Summary:	Remote clock reader (and local setter)
+Summary(fr):	Lecteur d'horloge distante (et configurateur local)
+Summary(de):	Entfernter Uhrenleser (lokaler Einsteller)
+Summary(pl):	Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
+Summary(tr):	Að üzerinden sistem saatini ayarlayan yazýlým
+Name:		rdate
+%define		versionmajor 0
+%define		versionminor 990504
+Version:	%{versionmajor}.%{versionminor}
+Release:	1
+Copyright:	none
+Group:		Networking/Utilities
+Group(pl):	Sieciowe/Narzêdzia
+Source:		ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -48,11 +48,11 @@ mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %build
 make clean
-make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
+make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{bin,man/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 install -s rdate $RPM_BUILD_ROOT%{_bindir}
 install rdate.1 $RPM_BUILD_ROOT%{_mandir}/man1
