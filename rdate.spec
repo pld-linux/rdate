@@ -38,8 +38,8 @@ vous vous souciez des millisecondes, récupérez ntpd.
 rdate jest programem który odczytuje datê i godzinê z innej maszyny w
 sieci. Je¿eli jest uruchamiany jako root mo¿e tak¿e s³u¿yæ do
 synchronizacji lokalnego czasu wzglêdem innego komputera w sieci. Nie
-jest zbyt dok³adny i je¿eli milisekundy maj± dla znaczenie nale¿y u¿yæ
-ntpd.
+jest zbyt dok³adny i je¿eli milisekundy maj± dla nas znaczenie nale¿y
+u¿yæ ntpd.
 
 %description -l tr
 rdate ile herhangi baþka bir makinadan sistem saatini sorgulanabilir.
