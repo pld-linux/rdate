@@ -7,17 +7,15 @@ Summary(pt_BR):	Leitor de relСgio remoto (e ajustador local)
 Summary(ru):	Программа для чтения удаленных часов и установки по ним местных
 Summary(tr):	AП Эzerinden sistem saatini ayarlayan yazЩlЩm
 Name:		rdate
-Version:	1.3
-Release:	9
+Version:	1.4
+Release:	2
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
-# Source0-md5:	67da8370335ad0ca7c82cdbe1c82976e
+# Source0-md5:	b2e5bbfa10ec480076750fd78fe7f7a5
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Source3:	%{name}.cron
-Patch0:		%{name}-segfault.patch
-Patch1:		%{name}-ipv6.patch
 Requires(post,postun):	/sbin/chkconfig
 Obsoletes:	rdate-bsd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -83,8 +81,6 @@ da mЭmkЭndЭr. Ne var ki bu uygulama Гok hassas deПildir.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %{__make} clean
