@@ -12,6 +12,7 @@ Release:	9
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
+# Source0-md5:	67da8370335ad0ca7c82cdbe1c82976e
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Source3:	%{name}.cron
