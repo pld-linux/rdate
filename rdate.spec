@@ -1,8 +1,4 @@
 Summary:     Remote clock reader (and local setter)
-Summary(de): Entfernter Uhrenleser (lokaler Einsteller)
-Summary(fr): Lecteur d'horloge distante (et configurateur local)
-Summary(pl): Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
-Summary(tr): Að üzerinden sistem saatini ayarlayan yazýlým
 Name:        rdate
 %define      versionmajor 0
 %define      versionminor 960923
@@ -10,8 +6,13 @@ Version:     %{versionmajor}.%{versionminor}
 Release:     6
 Copyright:   none
 Group:       Networking/Utilities
+Group(pl):   Sieciowe/Narzêdzia
 Source:      ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
-Buildroot:   /tmp/%{name}-%{release}-root
+Buildroot:   /tmp/buildroot-%{name}-%{release}
+Summary(de): Entfernter Uhrenleser (lokaler Einsteller)
+Summary(fr): Lecteur d'horloge distante (et configurateur local)
+Summary(pl): Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
+Summary(tr): Að üzerinden sistem saatini ayarlayan yazýlým
 
 %description
 rdate is a program that can retrieve the time from another machine on your
