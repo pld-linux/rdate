@@ -8,7 +8,7 @@ Summary(ru):	Программа для чтения удаленных часов и установки по ним местных
 Summary(tr):	AП Эzerinden sistem saatini ayarlayan yazЩlЩm
 Name:		rdate
 Version:	1.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
@@ -108,6 +108,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/rdate
-%attr(755,root,root) %{_sysconfdir}/rc.d/init.d/%{name}
+%attr(754,root,root) %{_sysconfdir}/rc.d/init.d/%{name}
 %attr(644,root,root) %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 %{_mandir}/man1/*
