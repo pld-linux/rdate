@@ -1,11 +1,14 @@
 Summary:	Remote clock reader (and local setter)
-Summary(fr):	Lecteur d'horloge distante (et configurateur local)
 Summary(de):	Entfernter Uhrenleser (lokaler Einsteller)
+Summary(es):	Lector de reloj remoto (y ajuste local)
+Summary(fr):	Lecteur d'horloge distante (et configurateur local)
 Summary(pl):	Program podaj╠cy (i ustawiaj╠cy) zdalny czas zegara
+Summary(pt_BR):	Leitor de relСgio remoto (e ajustador local)
+Summary(ru):	Программа для чтения удаленных часов и установки по ним местных
 Summary(tr):	AП Эzerinden sistem saatini ayarlayan yazЩlЩm
 Name:		rdate
 Version:	1.2
-Release:	1
+Release:	6
 License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
@@ -24,6 +27,12 @@ Ihre Ortszeit auf die des abgefragten Rechners ein. Es ist nicht sehr
 genau. Wenn Sie auf die Millisekunde genau sein wollen, besorgen Sie
 sich ntpd.
 
+%description -l es
+Rdate es un programa que puede retornar el tiempo (fecha/hora) de otra
+mАquina en tu red. Si le ejecutas como root, tambiИn configurarА el
+tiempo local como el de la mАquina solicitada. No es muy riguroso;
+coge xntpd, si realmente te preocupa los milisegundos.
+
 %description -l fr
 rdate permet de rИcupИrer l'heure d'une autre machine du rИseau. s'il
 est lancИ par root, il configurera aussi votre heure locale avec celle
@@ -37,13 +46,35 @@ synchronizacji lokalnego czasu wzglЙdem innego komputera w sieci. Nie
 jest zbyt dokЁadny i je©eli milisekundy maj╠ dla nas znaczenie nale©y
 u©yФ ntpd.
 
+%description -l pt_BR
+Rdate И um programa que pode retornar o tempo (data/hora) de outra
+mАquina na sua rede. Se rodar como root, ele tambИm irА configurar o
+hora local como o da mАquina requisitada. Ele nЦo И super preciso;
+pegue xntpd se vocЙ realmente se preocupa com milisegundos.
+
+%description -l ru
+Утилита rdate считывает дату и время с другой машины вашей сети
+используя протокол описанный в RFC 868. Если вы запускаете rdate от
+пользователя root, она также может установить время на локальной
+машине в соответствии со временем на удаленной машине. Имейте в виду,
+что rdate не отличается особенной точностью; если вы заботитесь о
+миллисекундах, установите пакет xntp3, включающий демона xntpd.
+
 %description -l tr
 rdate ile herhangi baЧka bir makinadan sistem saatini sorgulanabilir.
 Yetkili kullanЩcЩ tarafЩndan ГalЩЧtЩrЩlЩrsa sistem saatini ayarlamak
 da mЭmkЭndЭr. Ne var ki bu uygulama Гok hassas deПildir.
 
+%description -l uk
+Утил╕та rdate отриму╓ дату та час з ╕ншо╖ машини у ваш╕й мереж╕,
+використовуючи протокол описаний в RFC 868. Якщо ви запуска╓те rdate
+в╕д користувача root, вона також може встановити час на локальн╕й
+машин╕ у в╕дпов╕дност╕ ╕з часом на в╕ддален╕й машин╕. Майте на уваз╕,
+що rdate не в╕др╕зня╓ться особливою точн╕стю; якщо ви турбу╓тесь про
+м╕л╕секунди, встанов╕ть пакет xntp3, який включа╓ демона xntpd.
+
 %prep
-%setup -q 
+%setup -q
 
 %build
 %{__make} clean
