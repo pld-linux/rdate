@@ -5,7 +5,7 @@
 #SYNC_HWCLOCK="yes"
 
 # From which server?
-#RDATE_SERVERS=""
+#RDATE_SERVERS="time.task.gda.pl"
 
 # Sync in background during bootup?
 # (set to "no" if you need precise timestamps early)
