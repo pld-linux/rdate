@@ -16,6 +16,7 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-segfault.patch
 Requires(post,postun):	/sbin/chkconfig
+Obsoletes:	rdate-bsd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
