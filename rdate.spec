@@ -63,7 +63,7 @@ gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%attr(755, root, root) %{_bindir}/rdate
+%attr(755,root,root) %{_bindir}/rdate
 %{_mandir}/man1/*
 
 %changelog
