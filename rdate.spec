@@ -1,6 +1,3 @@
-# TODO:
-# - make cron-job to sync time periodically (1 time per day?). Can be turn off
-#   from sysconfig/rdate
 Summary:	Remote clock reader (and local setter)
 Summary(de):	Entfernter Uhrenleser (lokaler Einsteller)
 Summary(es):	Lector de reloj remoto (y ajuste local)
