@@ -5,9 +5,9 @@ Summary(pl): Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
 Summary(tr): Að üzerinden sistem saatini ayarlayan yazýlým
 Name:        rdate
 %define      versionmajor 0
-%define      versionminor 960923
+%define      versionminor 990504
 Version:     %{versionmajor}.%{versionminor}
-Release:     7
+Release:     1
 Copyright:   none
 Group:       Networking/Utilities
 Group(pl):   Sieciowe/Narzêdzia
