@@ -12,6 +12,6 @@ if [ -f /etc/sysconfig/rdate ] ; then
 fi
 
 # Check that networking is up.
-if [ is_yes "${NETWORKING}" -a is _yes "${SET_TIME}" -a -n "${RDATE_SERVER}" ]; then
-	/usr/bin/rdate -s $RDATE_SERVER
+if [ is_yes "${NETWORKING}" -a is_yes "${SET_TIME}" -a -n "${RDATE_SERVER}" ]; then
+	/usr/bin/rdate -s -l $RDATE_SERVER
 fi
