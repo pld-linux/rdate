@@ -26,7 +26,7 @@ case "$1" in
 	# Check if we have to do anything:
 	if [ "$SET_TIME" = "yes" ]; then
 		if [ -n "$RDATE_SERVER" ]; then
-			run_cmd "Setting time from remote server " rdate -s -l $RDATE_SERVER
+			run_cmd "Setting time from remote server: $RDATE_SERVER" rdate -s -l $RDATE_SERVER
 		fi
 	fi
 	;;
@@ -35,6 +35,7 @@ case "$1" in
 	;;
   status)
   	# What can we ask??
+	# Maybe some comparition time/date local and remote?
 	;;
   *)
 	msg_usage "$0 {start|stop|restart|status}"
