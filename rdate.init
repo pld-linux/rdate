@@ -2,7 +2,7 @@
 #
 # rdate		This shell script takes care of setting date from ntp server on startup
 #
-# chkconfig:    2345 11 89
+# chkconfig:	2345 15 89
 # description:	set time with rdate
 # processname:	rdate
 
@@ -13,9 +13,13 @@
 . /etc/sysconfig/network
 
 # Check that networking is up.
-if is_no "${NETWORKING}"; then
-	msg_network_down rdate
-	exit 1
+if is_yes "${NETWORKING}"; then
+	if [ ! -f /var/lock/subsys/network -a "$1" != stop -a "$1" != status ]; then
+		msg_network_down rdate
+		exit 1
+	fi
+else
+	exit 0
 fi
 
 SET_TIME=no
@@ -25,57 +29,56 @@ if [ -f /etc/sysconfig/rdate ]; then
 	. /etc/sysconfig/rdate
 fi
 
+
 # See how we were called.
 case "$1" in
-  start|restart)
+  start|restart|reload|force-reload)
 	# Check if we have to do anything:
-	if is_yes "${SET_TIME}"; then
-		if [ -n "${RDATE_SERVERS}" ]; then
-			run_cmd "Setting time from remote server: ${RDATE_SERVERS}" rdate -s -l "${RDATE_SERVERS}"
-			if [ $? -eq 0 -a -x /sbin/hwclock ] && is_yes "${SYNC_HWCLOCK}"; then
-				# Set the system clock.
-				ARC=0
-				SRM=0
-				UTC=0
-				
-				if [ -f /etc/sysconfig/clock ]; then
-					. /etc/sysconfig/clock
-				
-					# convert old style clock config to new values
-					if [ "${CLOCKMODE}" = "GMT" ]; then
-						UTC=true
-					elif [ "${CLOCKMODE}" = "ARC" ]; then
-						ARC=true
-					fi
-				fi
-				
-				if grep "system serial" /proc/cpuinfo | grep -q MILO ; then
+	if is_yes "${SET_TIME}" && [ -n "${RDATE_SERVERS}" ]; then
+		run_cmd "$(nls "Setting time from remote server: %s" "${RDATE_SERVERS}")" rdate -s -l "${RDATE_SERVERS}"
+		if [ $? -eq 0 -a -x /sbin/hwclock ] && is_yes "${SYNC_HWCLOCK}"; then
+			# Set the system clock.
+			ARC=0
+			SRM=0
+			UTC=0
+
+			if [ -f /etc/sysconfig/clock ]; then
+				. /etc/sysconfig/clock
+
+				# convert old style clock config to new values
+				if [ "${CLOCKMODE}" = "GMT" ]; then
+					UTC=true
+				elif [ "${CLOCKMODE}" = "ARC" ]; then
 					ARC=true
 				fi
-				
-				CLOCKFLAGS="--systohc"
-				
-				if is_yes "$UTC" ; then
-					CLOCKFLAGS="$CLOCKFLAGS --utc"
-				else
-					CLOCKFLAGS="$CLOCKFLAGS --localtime"
-				fi
-				
-				if is_yes "$ARC" ; then
-					CLOCKFLAGS="$CLOCKFLAGS -A"
-				fi
-				
-				if is_yes "$SRM" ; then
-					CLOCKFLAGS="$CLOCKFLAGS -S"
-				fi
-				
-				run_cmd "Syncing hardware clock" /sbin/hwclock $CLOCKFLAGS
 			fi
+
+			if grep "system serial" /proc/cpuinfo | grep -q MILO ; then
+				ARC=true
+			fi
+
+			CLOCKFLAGS="--systohc"
+				
+			if is_yes "$UTC" ; then
+				CLOCKFLAGS="$CLOCKFLAGS --utc"
+			else
+				CLOCKFLAGS="$CLOCKFLAGS --localtime"
+			fi
+
+			if is_yes "$ARC" ; then
+				CLOCKFLAGS="$CLOCKFLAGS -A"
+			fi
+
+			if is_yes "$SRM" ; then
+				CLOCKFLAGS="$CLOCKFLAGS -S"
+			fi
+
+			run_cmd "Syncing hardware clock" /sbin/hwclock $CLOCKFLAGS
 		fi
 	fi
 	;;
   stop)
-  	# nothing to do
+	# nothing to do
 	;;
   status)
 	if [ -n "${RDATE_SERVERS}" ]; then
@@ -87,6 +90,6 @@ case "$1" in
 	fi
 	;;
   *)
-	msg_usage "$0 {start|stop|restart|status}"
-	exit 1
+	msg_usage "$0 {start|stop|restart|reload|force-reload|status}"
+	exit 3
 esac
