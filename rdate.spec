@@ -7,7 +7,7 @@ Name:		rdate
 %define		versionmajor 0
 %define		versionminor 990821
 Version:	%{versionmajor}.%{versionminor}
-Release:	2
+Release:	3
 License:	none
 Group:		Networking/Utilities
 Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
