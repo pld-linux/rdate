@@ -47,8 +47,8 @@ mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 %setup -q -n %{name}
 
 %build
-make clean
-make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s"
+%{__make} clean
+%{__make} CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s"
 
 %install
 rm -rf $RPM_BUILD_ROOT
