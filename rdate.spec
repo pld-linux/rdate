@@ -4,13 +4,11 @@ Summary(de):	Entfernter Uhrenleser (lokaler Einsteller)
 Summary(pl):	Program podaj±cy (i ustawiaj±cy) zdalny czas zegara
 Summary(tr):	Að üzerinden sistem saatini ayarlayan yazýlým
 Name:		rdate
-%define		versionmajor 0
-%define		versionminor 990821
-Version:	%{versionmajor}.%{versionminor}
-Release:	3
-License:	none
+Version:	1.2
+Release:	1
+License:	GPL
 Group:		Networking/Utilities
-Source0:	ftp://sunsite.unc.edu/pub/Linux/system/network/misc/%{name}-%{versionminor}.tar.gz
+Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,7 +43,7 @@ Yetkili kullanýcý tarafýndan çalýþtýrýlýrsa sistem saatini ayarlamak
 da mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %prep
-%setup -q -n %{name}-%{versionminor}
+%setup -q 
 
 %build
 %{__make} clean
