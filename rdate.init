@@ -32,7 +32,7 @@ case "$1" in
 	if is_yes "${SET_TIME}"; then
 		if [ -n "${RDATE_SERVERS}" ]; then
 			run_cmd "Setting time from remote server: ${RDATE_SERVERS}" rdate -s -l "${RDATE_SERVERS}"
-			if [ $? -eq 0 -a is_yes "${SYNC_HWCLOCK}" -a -x /sbin/hwclock ]; then
+			if [ $? -eq 0 -a -x /sbin/hwclock ] && is_yes "${SYNC_HWCLOCK}"; then
 				# Set the system clock.
 				ARC=0
 				SRM=0
@@ -69,7 +69,7 @@ case "$1" in
 					CLOCKFLAGS="$CLOCKFLAGS -S"
 				fi
 				
-				/sbin/hwclock $CLOCKFLAGS
+				run_cmd "Syncing hardware clock" /sbin/hwclock $CLOCKFLAGS
 			fi
 		fi
 	fi
