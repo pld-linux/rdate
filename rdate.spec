@@ -65,30 +65,3 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %attr(755,root,root) %{_bindir}/rdate
 %{_mandir}/man1/*
-
-%changelog
-* Wed Feb 17 1999 Micha³ Kuratczyk <kura@wroclaw.art.pl>
-  [0.960923-7]
-- added gzipping man page
-- added LDFLAGS=-s
-- sloted BuildRoot into PLD standard
-- cosmetic changes
-
-* Thu Oct 13 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.960923-6]
-- removed patching Makefile (now $RPM_OPT_FLAGS in CFLAGS is passed directly
-  in make parameters).
-
-* Sun Oct 11 1998 Marek Obuchowicz <elephant@shadow.eu.org>
-- some other modifications of spec file,
-- build from non-root account,
-- fixed file permissons.
-
-* Tue May 05 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Mon Oct 20 1997 Otto Hammersmith <otto@redhat.com>
-- fixed the url to the source
-
-* Mon Jul 21 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
