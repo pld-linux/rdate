@@ -51,7 +51,7 @@ da mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %build
 %{__make} clean
-%{__make} CFLAGS="-DINET6 $RPM_OPT_FLAGS" 
+%{__make} CFLAGS="-DINET6 %{rpmcflags}" 
 
 %install
 rm -rf $RPM_BUILD_ROOT
