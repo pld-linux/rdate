@@ -7,11 +7,11 @@
 . /etc/sysconfig/network
 
 # Get service config
-if [ -f /etc/sysconfig/rdate ] ; then
+if [ -f /etc/sysconfig/rdate ]; then
 	. /etc/sysconfig/rdate
 fi
 
 # Check that networking is up.
-if [ is_yes "${NETWORKING}" -a is_yes "${SET_TIME}" -a -n "${RDATE_SERVER}" ]; then
+if [ "is_yes ${NETWORKING}" -a "is_yes ${SET_TIME}" -a -n "${RDATE_SERVER}" ]; then
 	/usr/bin/rdate -s -l $RDATE_SERVER
 fi
