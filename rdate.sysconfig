@@ -6,3 +6,9 @@
 
 # From which server?
 #RDATE_SERVERS=""
+
+# Sync in background during bootup?
+# (set to "no" if you need precise timestamps early)
+# BEWARE: Disables warnings and errors
+#BACKGROUND="yes"
+
