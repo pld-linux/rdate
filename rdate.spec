@@ -93,6 +93,14 @@ install rdate.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/%{name}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/%{name}
 
+%post
+/sbin/chkconfig --add rdate
+
+%preun
+if [ "$1" = "0" ]; then
+	/sbin/chkconfig --del rdate
+fi
+	
 %clean
 rm -rf $RPM_BUILD_ROOT
 
