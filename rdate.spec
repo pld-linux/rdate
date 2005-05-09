@@ -16,9 +16,10 @@ Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Source3:	%{name}.cron
+PreReq:		rc-scripts
 Requires(post,postun):	/sbin/chkconfig
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	rdate-bsd
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 rdate is a program that can retrieve the time from another machine on
@@ -84,7 +85,8 @@ da mümkündür. Ne var ki bu uygulama çok hassas deðildir.
 
 %build
 %{__make} clean
-%{__make} CFLAGS="-DINET6 %{rpmcflags}"
+%{__make} \
+	CFLAGS="-DINET6 %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -96,6 +98,9 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/%{name}
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/%{name}
 install %{SOURCE3} $RPM_BUILD_ROOT/etc/cron.daily/%{name}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 /sbin/chkconfig --add rdate
 
@@ -103,9 +108,6 @@ install %{SOURCE3} $RPM_BUILD_ROOT/etc/cron.daily/%{name}
 if [ "$1" = "0" ]; then
 	/sbin/chkconfig --del rdate
 fi
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
