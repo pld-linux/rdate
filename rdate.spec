@@ -8,7 +8,7 @@ Summary(ru):	Программа для чтения удаленных часов и установки по ним местных
 Summary(tr):	AП Эzerinden sistem saatini ayarlayan yazЩlЩm
 Name:		rdate
 Version:	1.4
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Networking/Utilities
 Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
