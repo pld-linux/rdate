@@ -16,7 +16,7 @@ Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Source3:	%{name}.cron
-PreReq:		rc-scripts
+Requires:	rc-scripts
 Requires(post,postun):	/sbin/chkconfig
 Obsoletes:	rdate-bsd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -114,5 +114,5 @@ fi
 %attr(755,root,root) %{_bindir}/rdate
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
 %attr(755,root,root) /etc/cron.daily/%{name}
-%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
 %{_mandir}/man1/*
