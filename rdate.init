@@ -54,7 +54,7 @@ set_time ()
 		fi
 
 		CLOCKFLAGS="--systohc"
-			
+
 		if is_yes "$UTC" ; then
 			CLOCKFLAGS="$CLOCKFLAGS --utc"
 		else
@@ -97,7 +97,6 @@ case "$1" in
 			run_cmd "$(nls "Setting time from remote server: %s" "${RDATE_SERVERS}")" rdate -l -s ${RDATE_SERVERS}
 			set_time
 		fi
-		
 	fi
 	;;
   stop)
