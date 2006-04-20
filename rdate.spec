@@ -16,8 +16,8 @@ Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Source3:	%{name}.cron
+Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
-Requires(post,postun):	/sbin/chkconfig
 Obsoletes:	rdate-bsd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
