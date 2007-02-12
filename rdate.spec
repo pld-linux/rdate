@@ -1,11 +1,11 @@
 Summary:	Remote clock reader (and local setter)
-Summary(de.UTF-8):   Entfernter Uhrenleser (lokaler Einsteller)
-Summary(es.UTF-8):   Lector de reloj remoto (y ajuste local)
-Summary(fr.UTF-8):   Lecteur d'horloge distante (et configurateur local)
-Summary(pl.UTF-8):   Program podający (i ustawiający) zdalny czas zegara
-Summary(pt_BR.UTF-8):   Leitor de relógio remoto (e ajustador local)
-Summary(ru.UTF-8):   Программа для чтения удаленных часов и установки по ним местных
-Summary(tr.UTF-8):   Ağ üzerinden sistem saatini ayarlayan yazılım
+Summary(de.UTF-8):	Entfernter Uhrenleser (lokaler Einsteller)
+Summary(es.UTF-8):	Lector de reloj remoto (y ajuste local)
+Summary(fr.UTF-8):	Lecteur d'horloge distante (et configurateur local)
+Summary(pl.UTF-8):	Program podający (i ustawiający) zdalny czas zegara
+Summary(pt_BR.UTF-8):	Leitor de relógio remoto (e ajustador local)
+Summary(ru.UTF-8):	Программа для чтения удаленных часов и установки по ним местных
+Summary(tr.UTF-8):	Ağ üzerinden sistem saatini ayarlayan yazılım
 Name:		rdate
 Version:	1.4
 Release:	4
