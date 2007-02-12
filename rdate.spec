@@ -1,11 +1,11 @@
 Summary:	Remote clock reader (and local setter)
-Summary(de):	Entfernter Uhrenleser (lokaler Einsteller)
-Summary(es):	Lector de reloj remoto (y ajuste local)
-Summary(fr):	Lecteur d'horloge distante (et configurateur local)
-Summary(pl):	Program podaj╠cy (i ustawiaj╠cy) zdalny czas zegara
-Summary(pt_BR):	Leitor de relСgio remoto (e ajustador local)
-Summary(ru):	Программа для чтения удаленных часов и установки по ним местных
-Summary(tr):	AП Эzerinden sistem saatini ayarlayan yazЩlЩm
+Summary(de.UTF-8):   Entfernter Uhrenleser (lokaler Einsteller)
+Summary(es.UTF-8):   Lector de reloj remoto (y ajuste local)
+Summary(fr.UTF-8):   Lecteur d'horloge distante (et configurateur local)
+Summary(pl.UTF-8):   Program podajд┘cy (i ustawiajд┘cy) zdalny czas zegara
+Summary(pt_BR.UTF-8):   Leitor de relцЁgio remoto (e ajustador local)
+Summary(ru.UTF-8):   п÷я─п╬пЁя─п╟п╪п╪п╟ п╢п╩я▐ я┤я┌п╣п╫п╦я▐ я┐п╢п╟п╩п╣п╫п╫я▀я┘ я┤п╟я│п╬п╡ п╦ я┐я│я┌п╟п╫п╬п╡п╨п╦ п©п╬ п╫п╦п╪ п╪п╣я│я┌п╫я▀я┘
+Summary(tr.UTF-8):   Aд÷ ц╪zerinden sistem saatini ayarlayan yazд╠lд╠m
 Name:		rdate
 Version:	1.4
 Release:	4
@@ -27,58 +27,58 @@ your network. If run as root, it will also set your local time to that
 of the machine you queried. It is not super accurate; get ntpd if you
 are really worried about milliseconds.
 
-%description -l de
+%description -l de.UTF-8
 rdate ist ein Programm, das die Uhrzeit von einem anderen
-Netzwerkrechner lesen kann. Wenn Sie es als root ausfЭhren, stellt es
+Netzwerkrechner lesen kann. Wenn Sie es als root ausfц╪hren, stellt es
 Ihre Ortszeit auf die des abgefragten Rechners ein. Es ist nicht sehr
 genau. Wenn Sie auf die Millisekunde genau sein wollen, besorgen Sie
 sich ntpd.
 
-%description -l es
+%description -l es.UTF-8
 Rdate es un programa que puede retornar el tiempo (fecha/hora) de otra
-mАquina en tu red. Si le ejecutas como root, tambiИn configurarА el
-tiempo local como el de la mАquina solicitada. No es muy riguroso;
+mц║quina en tu red. Si le ejecutas como root, tambiц╘n configurarц║ el
+tiempo local como el de la mц║quina solicitada. No es muy riguroso;
 coge xntpd, si realmente te preocupa los milisegundos.
 
-%description -l fr
-rdate permet de rИcupИrer l'heure d'une autre machine du rИseau. s'il
-est lancИ par root, il configurera aussi votre heure locale avec celle
-de la machine que vous avez interrogИ. Il n'est pas trХs prИcis ; si
-vous vous souciez des millisecondes, rИcupИrez ntpd.
+%description -l fr.UTF-8
+rdate permet de rц╘cupц╘rer l'heure d'une autre machine du rц╘seau. s'il
+est lancц╘ par root, il configurera aussi votre heure locale avec celle
+de la machine que vous avez interrogц╘. Il n'est pas trц╗s prц╘cis ; si
+vous vous souciez des millisecondes, rц╘cupц╘rez ntpd.
 
-%description -l pl
-rdate jest programem ktСry odczytuje datЙ i godzinЙ z innej maszyny w
-sieci. Je©eli jest uruchamiany jako root mo©e tak©e sЁu©yФ do
-synchronizacji lokalnego czasu wzglЙdem innego komputera w sieci. Nie
-jest zbyt dokЁadny i je©eli milisekundy maj╠ dla nas znaczenie nale©y
-u©yФ ntpd.
+%description -l pl.UTF-8
+rdate jest programem ktцЁry odczytuje datд≥ i godzinд≥ z innej maszyny w
+sieci. Jeе╪eli jest uruchamiany jako root moе╪e takе╪e sе┌uе╪yд┤ do
+synchronizacji lokalnego czasu wzglд≥dem innego komputera w sieci. Nie
+jest zbyt dokе┌adny i jeе╪eli milisekundy majд┘ dla nas znaczenie naleе╪y
+uе╪yд┤ ntpd.
 
-%description -l pt_BR
-Rdate И um programa que pode retornar o tempo (data/hora) de outra
-mАquina na sua rede. Se rodar como root, ele tambИm irА configurar o
-hora local como o da mАquina requisitada. Ele nЦo И super preciso;
-pegue xntpd se vocЙ realmente se preocupa com milisegundos.
+%description -l pt_BR.UTF-8
+Rdate ц╘ um programa que pode retornar o tempo (data/hora) de outra
+mц║quina na sua rede. Se rodar como root, ele tambц╘m irц║ configurar o
+hora local como o da mц║quina requisitada. Ele nцёo ц╘ super preciso;
+pegue xntpd se vocц╙ realmente se preocupa com milisegundos.
 
-%description -l ru
-Утилита rdate считывает дату и время с другой машины вашей сети
-используя протокол описанный в RFC 868. Если вы запускаете rdate от
-пользователя root, она также может установить время на локальной
-машине в соответствии со временем на удаленной машине. Имейте в виду,
-что rdate не отличается особенной точностью; если вы заботитесь о
-миллисекундах, установите пакет xntp3, включающий демона xntpd.
+%description -l ru.UTF-8
+пёя┌п╦п╩п╦я┌п╟ rdate я│я┤п╦я┌я▀п╡п╟п╣я┌ п╢п╟я┌я┐ п╦ п╡я─п╣п╪я▐ я│ п╢я─я┐пЁп╬п╧ п╪п╟я┬п╦п╫я▀ п╡п╟я┬п╣п╧ я│п╣я┌п╦
+п╦я│п©п╬п╩я▄п╥я┐я▐ п©я─п╬я┌п╬п╨п╬п╩ п╬п©п╦я│п╟п╫п╫я▀п╧ п╡ RFC 868. п∙я│п╩п╦ п╡я▀ п╥п╟п©я┐я│п╨п╟п╣я┌п╣ rdate п╬я┌
+п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▐ root, п╬п╫п╟ я┌п╟п╨п╤п╣ п╪п╬п╤п╣я┌ я┐я│я┌п╟п╫п╬п╡п╦я┌я▄ п╡я─п╣п╪я▐ п╫п╟ п╩п╬п╨п╟п╩я▄п╫п╬п╧
+п╪п╟я┬п╦п╫п╣ п╡ я│п╬п╬я┌п╡п╣я┌я│я┌п╡п╦п╦ я│п╬ п╡я─п╣п╪п╣п╫п╣п╪ п╫п╟ я┐п╢п╟п╩п╣п╫п╫п╬п╧ п╪п╟я┬п╦п╫п╣. п≤п╪п╣п╧я┌п╣ п╡ п╡п╦п╢я┐,
+я┤я┌п╬ rdate п╫п╣ п╬я┌п╩п╦я┤п╟п╣я┌я│я▐ п╬я│п╬п╠п╣п╫п╫п╬п╧ я┌п╬я┤п╫п╬я│я┌я▄я▌; п╣я│п╩п╦ п╡я▀ п╥п╟п╠п╬я┌п╦я┌п╣я│я▄ п╬
+п╪п╦п╩п╩п╦я│п╣п╨я┐п╫п╢п╟я┘, я┐я│я┌п╟п╫п╬п╡п╦я┌п╣ п©п╟п╨п╣я┌ xntp3, п╡п╨п╩я▌я┤п╟я▌я┴п╦п╧ п╢п╣п╪п╬п╫п╟ xntpd.
 
-%description -l tr
-rdate ile herhangi baЧka bir makinadan sistem saatini sorgulanabilir.
-Yetkili kullanЩcЩ tarafЩndan ГalЩЧtЩrЩlЩrsa sistem saatini ayarlamak
-da mЭmkЭndЭr. Ne var ki bu uygulama Гok hassas deПildir.
+%description -l tr.UTF-8
+rdate ile herhangi baе÷ka bir makinadan sistem saatini sorgulanabilir.
+Yetkili kullanд╠cд╠ tarafд╠ndan ц╖alд╠е÷tд╠rд╠lд╠rsa sistem saatini ayarlamak
+da mц╪mkц╪ndц╪r. Ne var ki bu uygulama ц╖ok hassas deд÷ildir.
 
-%description -l uk
-Утил╕та rdate отриму╓ дату та час з ╕ншо╖ машини у ваш╕й мереж╕,
-використовуючи протокол описаний в RFC 868. Якщо ви запуска╓те rdate
-в╕д користувача root, вона також може встановити час на локальн╕й
-машин╕ у в╕дпов╕дност╕ ╕з часом на в╕ддален╕й машин╕. Майте на уваз╕,
-що rdate не в╕др╕зня╓ться особливою точн╕стю; якщо ви турбу╓тесь про
-м╕л╕секунди, встанов╕ть пакет xntp3, який включа╓ демона xntpd.
+%description -l uk.UTF-8
+пёя┌п╦п╩я√я┌п╟ rdate п╬я┌я─п╦п╪я┐я■ п╢п╟я┌я┐ я┌п╟ я┤п╟я│ п╥ я√п╫я┬п╬я≈ п╪п╟я┬п╦п╫п╦ я┐ п╡п╟я┬я√п╧ п╪п╣я─п╣п╤я√,
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┤п╦ п©я─п╬я┌п╬п╨п╬п╩ п╬п©п╦я│п╟п╫п╦п╧ п╡ RFC 868. п╞п╨я┴п╬ п╡п╦ п╥п╟п©я┐я│п╨п╟я■я┌п╣ rdate
+п╡я√п╢ п╨п╬я─п╦я│я┌я┐п╡п╟я┤п╟ root, п╡п╬п╫п╟ я┌п╟п╨п╬п╤ п╪п╬п╤п╣ п╡я│я┌п╟п╫п╬п╡п╦я┌п╦ я┤п╟я│ п╫п╟ п╩п╬п╨п╟п╩я▄п╫я√п╧
+п╪п╟я┬п╦п╫я√ я┐ п╡я√п╢п©п╬п╡я√п╢п╫п╬я│я┌я√ я√п╥ я┤п╟я│п╬п╪ п╫п╟ п╡я√п╢п╢п╟п╩п╣п╫я√п╧ п╪п╟я┬п╦п╫я√. п°п╟п╧я┌п╣ п╫п╟ я┐п╡п╟п╥я√,
+я┴п╬ rdate п╫п╣ п╡я√п╢я─я√п╥п╫я▐я■я┌я▄я│я▐ п╬я│п╬п╠п╩п╦п╡п╬я▌ я┌п╬я┤п╫я√я│я┌я▌; я▐п╨я┴п╬ п╡п╦ я┌я┐я─п╠я┐я■я┌п╣я│я▄ п©я─п╬
+п╪я√п╩я√я│п╣п╨я┐п╫п╢п╦, п╡я│я┌п╟п╫п╬п╡я√я┌я▄ п©п╟п╨п╣я┌ xntp3, я▐п╨п╦п╧ п╡п╨п╩я▌я┤п╟я■ п╢п╣п╪п╬п╫п╟ xntpd.
 
 %prep
 %setup -q
