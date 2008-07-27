@@ -8,7 +8,7 @@ Summary(ru.UTF-8):	Программа для чтения удаленных ч�
 Summary(tr.UTF-8):	Ağ üzerinden sistem saatini ayarlayan yazılım
 Name:		rdate
 Version:	1.4
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		Networking/Utilities
 Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
