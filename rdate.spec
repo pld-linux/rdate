@@ -16,6 +16,7 @@ Source0:	ftp://people.redhat.com/sopwith/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Source3:	%{name}.cron
+Patch0:		%{name}-format-security.patch
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
 Obsoletes:	rdate-bsd
@@ -82,6 +83,7 @@ da mümkündür. Ne var ki bu uygulama çok hassas değildir.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} clean

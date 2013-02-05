@@ -1,0 +1,11 @@
+--- rdate-1.4/rdate.c.formatsec	2013-02-05 13:07:59.883886943 +0100
++++ rdate-1.4/rdate.c	2013-02-05 13:08:22.273765647 +0100
+@@ -69,7 +69,7 @@ static void writeLog(int is_error, char
+     return; /* Error, which we can't report because this _is_ the error
+ 	       reporting mechanism */
+   if(log_mode)
+-    syslog(is_error?LOG_WARNING:LOG_INFO, buf);
++    syslog(is_error?LOG_WARNING:LOG_INFO, "%s", buf);
+   if(is_error || print_mode)
+     fprintf(is_error?stderr:stdout, "%s: %s\n", argv0, buf);
+ }
