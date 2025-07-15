@@ -83,7 +83,7 @@ da mümkündür. Ne var ki bu uygulama çok hassas değildir.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} clean
