@@ -1,0 +1,15 @@
+--- rdate-1.4/rdate.c.orig	2024-01-01 00:00:00.000000000 +0000
++++ rdate-1.4/rdate.c	2024-01-01 00:00:00.000000000 +0000
+@@ -298,7 +298,11 @@
+ 	  writeLog(0, "[%s]\t%s", hosts[i], ctime(&timeval));
+
+ 	  /* Do specified action(s) */
+-	  if(set_mode && stime(&timeval) < 0)
++	  struct timespec ts;
++	  ts.tv_sec = timeval;
++	  ts.tv_nsec = 0;
++
++	  if(set_mode && clock_settime(CLOCK_REALTIME, &ts) < 0)
+ 	    {
+ 	      writeLog(1, "%s: could not set system time: %s", argv0, strerror(errno));
+ 	      retval = 1;
